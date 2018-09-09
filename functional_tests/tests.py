@@ -73,7 +73,7 @@ class NewVisitorTest(LiveServerTestCase):
         
         # She notices that her list has a unique URL
         edith_list_url = self.browser.current_url
-        self.assertRegex(edith_list_url, '/list/.+', f'Got url {edith_list_url}')
+        self.assertRegex(edith_list_url, '/lists/.+', f'Got url {edith_list_url}')
         
         # A new user Francis comes along to the site
         ## Use a new browser session to make sure that no information of Edith's
@@ -95,7 +95,7 @@ class NewVisitorTest(LiveServerTestCase):
         
         # Francis gets his own unique URL
         francis_list_url = self.browser.current_url
-        self.assertRegex(edith_list_url, '/list/.+', f'Got url {edith_list_url}')
+        self.assertRegex(edith_list_url, '/lists/.+', f'Got url {edith_list_url}')
         self.assertNotEqual(francis_list_url, edith_list_url)
         
         # Again, there is no trace of Edith's list
